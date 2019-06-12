@@ -82,8 +82,11 @@ function Hero(attributes){
 }
 Hero.prototype = Object.create(Villain.prototype)
 Hero.prototype.evilCheck = function() {
-  if (this.isActuallyEvil)
+  if (this.isActuallyEvil) {
     return `${this.name} has an evil streak`
+  } else {
+    return `${this.name} is good through and through`
+  }
 }
 
 /*
@@ -193,7 +196,7 @@ Hero.prototype.evilCheck = function() {
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
   console.log(imposterSyndrome.tellStory())
   console.log(genericHero.evilCheck())
-  
+
   // Stretch task: 
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
